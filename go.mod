@@ -3,10 +3,8 @@ module github.com/v1Flows/shared-library
 go 1.24.0
 
 require (
-	github.com/golang-jwt/jwt/v5 v5.2.1
 	github.com/google/uuid v1.6.0
 	github.com/uptrace/bun v1.2.11
-	golang.org/x/crypto v0.36.0
 )
 
 require (
