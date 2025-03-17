@@ -22,7 +22,7 @@ type Runners struct {
 	ExecutingJob       bool       `bun:"executing_job,type:bool,default:false" json:"executing_job"`
 	Disabled           bool       `bun:"disabled,type:bool,default:false" json:"disabled"`
 	DisabledReason     string     `bun:"disabled_reason,type:text,default:''" json:"disabled_reason"`
-	Plugins            []Plugins  `bun:"plugins,type:jsonb,default:jsonb('[]')" json:"plugins"`
+	Plugins            []Plugin   `bun:"plugins,type:jsonb,default:jsonb('[]')" json:"plugins"`
 	Actions            []Action   `bun:"actions,type:jsonb,default:jsonb('[]')" json:"actions"`
 	Endpoints          []Endpoint `bun:"endpoints,type:jsonb,default:jsonb('[]')" json:"endpoints"`
 	RegisteredAt       time.Time  `bun:"registered_at,type:timestamptz,default:now()" json:"registered_at"`
@@ -42,14 +42,15 @@ type IncomingAutoRunners struct {
 	Version       string    `json:"version"`
 	Mode          string    `json:"mode"`
 	LastHeartbeat time.Time `json:"last_heartbeat"`
-	Plugins       []Plugins `json:"plugins"`
+	Plugins       []Plugin  `json:"plugins"`
 	Actions       []Action  `json:"actions"`
 }
 
-type Plugins struct {
-	Name    string `json:"name"`
-	Type    string `json:"type"`
-	Version string `json:"version"`
-	Author  string `json:"author"`
-	Actions Action `json:"actions"`
+type Plugin struct {
+	Name     string   `json:"name"`
+	Type     string   `json:"type"`
+	Version  string   `json:"version"`
+	Author   string   `json:"author"`
+	Action   Action   `json:"action"`
+	Endpoint Endpoint `json:"endpoint"`
 }
