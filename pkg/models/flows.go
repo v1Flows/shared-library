@@ -16,7 +16,7 @@ type Flows struct {
 	ProjectID           string    `bun:"project_id,type:text,notnull" json:"project_id"`
 	RunnerID            string    `bun:"runner_id,type:text,default:''" json:"runner_id"`
 	ExecParallel        bool      `bun:"exec_parallel,type:bool,default:false" json:"exec_parallel"`
-	Actions             []Actions `bun:"type:jsonb,default:jsonb('[]')" json:"actions"`
+	Actions             []Action  `bun:"type:jsonb,default:jsonb('[]')" json:"actions"`
 	Maintenance         bool      `bun:"maintenance,type:bool,default:false" json:"maintenance"`
 	MaintenanceMessage  string    `bun:"maintenance_message,type:text,default:''" json:"maintenance_message"`
 	Disabled            bool      `bun:"disabled,type:bool,default:false" json:"disabled"`
@@ -27,7 +27,7 @@ type Flows struct {
 	EncryptExecutions   bool      `bun:"encrypt_executions,type:bool,default:true" json:"encrypt_executions"`
 }
 
-type Actions struct {
+type Action struct {
 	ID                uuid.UUID `json:"id"`
 	Name              string    `json:"name"`
 	Description       string    `json:"description"`
