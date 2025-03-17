@@ -38,12 +38,13 @@ type Endpoint struct {
 }
 
 type IncomingAutoRunners struct {
-	Registered    bool      `json:"registered"`
-	Version       string    `json:"version"`
-	Mode          string    `json:"mode"`
-	LastHeartbeat time.Time `json:"last_heartbeat"`
-	Plugins       []Plugin  `json:"plugins"`
-	Actions       []Action  `json:"actions"`
+	Registered    bool       `json:"registered"`
+	Version       string     `json:"version"`
+	Mode          string     `json:"mode"`
+	LastHeartbeat time.Time  `json:"last_heartbeat"`
+	Plugins       []Plugin   `json:"plugins"`
+	Actions       []Action   `json:"actions"`
+	Endpoints     []Endpoint `json:"endpoints"`
 }
 
 type Plugin struct {
