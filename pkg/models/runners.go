@@ -17,7 +17,7 @@ type Runners struct {
 	Version            string    `bun:"version,type:text,default:''" json:"version"`
 	Mode               string    `bun:"mode,type:text,default:''" json:"mode"`
 	AutoRunner         bool      `bun:"auto_runner,type:bool,default:false" json:"auto_runner"`
-	ExFlowRunner       bool      `bun:"exflow_runner,type:bool,default:false" json:"exflow_runner"`
+	SharedRunner       bool      `bun:"shared_runner,type:bool,default:false" json:"shared_runner"`
 	LastHeartbeat      time.Time `bun:"last_heartbeat,type:timestamptz" json:"last_heartbeat"`
 	ExecutingJob       bool      `bun:"executing_job,type:bool,default:false" json:"executing_job"`
 	Disabled           bool      `bun:"disabled,type:bool,default:false" json:"disabled"`
@@ -29,12 +29,12 @@ type Runners struct {
 }
 
 type IncomingAutoRunners struct {
-	Registered    bool      `bun:"registered,type:bool,default:false" json:"registered"`
-	Version       string    `bun:"version,type:text,default:''" json:"version"`
-	Mode          string    `bun:"mode,type:text,default:''" json:"mode"`
-	LastHeartbeat time.Time `bun:"last_heartbeat,type:timestamptz" json:"last_heartbeat"`
-	Plugins       []Plugins `bun:"plugins,type:jsonb,default:jsonb('[]')" json:"plugins"`
-	Actions       []Actions `bun:"actions,type:jsonb,default:jsonb('[]')" json:"actions"`
+	Registered    bool      `json:"registered"`
+	Version       string    `json:"version"`
+	Mode          string    `json:"mode"`
+	LastHeartbeat time.Time `json:"last_heartbeat"`
+	Plugins       []Plugins `json:"plugins"`
+	Actions       []Actions `json:"actions"`
 }
 
 type Plugins struct {
