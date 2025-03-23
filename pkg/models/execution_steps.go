@@ -33,6 +33,11 @@ type ExecutionSteps struct {
 }
 
 type Message struct {
-	Title string   `json:"title"`
-	Lines []string `json:"lines"`
+	Title string `json:"title"`
+	Lines []Line `json:"lines"`
+}
+
+type Line struct {
+	Content string `json:"content"`
+	Color   string `json:"color"`
 }
