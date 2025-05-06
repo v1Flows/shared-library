@@ -26,6 +26,7 @@ type Flows struct {
 	EncryptActionParams bool              `bun:"encrypt_action_params,type:bool,default:true" json:"encrypt_action_params"`
 	EncryptExecutions   bool              `bun:"encrypt_executions,type:bool,default:true" json:"encrypt_executions"`
 	FailurePipelines    []FailurePipeline `bun:"type:jsonb,default:jsonb('[]')" json:"failure_pipelines"`
+	FailurePipelineID   string            `bun:"failure_pipeline_id,type:text,default:''" json:"failure_pipeline_id"`
 }
 
 type Action struct {
