@@ -40,6 +40,7 @@ type Action struct {
 	Params            []Params  `json:"params"`
 	CustomName        string    `json:"custom_name"`
 	CustomDescription string    `json:"custom_description"`
+	FailurePipelineID string    `json:"failure_pipeline_id"`
 }
 
 type Params struct {
