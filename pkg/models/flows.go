@@ -53,7 +53,7 @@ type Params struct {
 	Type        string     `json:"type"`
 	Value       string     `json:"value"`
 	Default     string     `json:"default"`
-	Options     *[]Options `json:"options"`
+	Options     *[]Options `json:"options,omitempty"`
 }
 
 type Options struct {
