@@ -45,15 +45,20 @@ type Action struct {
 }
 
 type Params struct {
-	Key         string   `json:"key"`
-	Title       string   `json:"title"`
-	Description string   `json:"description"`
-	Category    string   `json:"category"`
-	Required    bool     `json:"required"`
-	Type        string   `json:"type"`
-	Value       string   `json:"value"`
-	Default     string   `json:"default"`
-	Options     []string `json:"options"`
+	Key         string    `json:"key"`
+	Title       string    `json:"title"`
+	Description string    `json:"description"`
+	Category    string    `json:"category"`
+	Required    bool      `json:"required"`
+	Type        string    `json:"type"`
+	Value       string    `json:"value"`
+	Default     string    `json:"default"`
+	Options     []Options `json:"options"`
+}
+
+type Options struct {
+	Key   string `json:"key"`
+	Value string `json:"value"`
 }
 
 type FailurePipeline struct {
