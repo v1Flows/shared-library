@@ -42,6 +42,9 @@ type Action struct {
 	CustomName        string    `json:"custom_name"`
 	CustomDescription string    `json:"custom_description"`
 	FailurePipelineID string    `json:"failure_pipeline_id"`
+	UpdateAvailable   bool      `json:"update_available"`
+	UpdateVersion     string    `json:"update_version,omitempty"`
+	UpdatedAction     *Action   `json:"updated_action,omitempty"`
 }
 
 type Params struct {
