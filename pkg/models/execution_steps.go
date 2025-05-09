@@ -38,6 +38,7 @@ type Message struct {
 }
 
 type Line struct {
-	Content string `json:"content"`
-	Color   string `json:"color"`
+	Content   string    `json:"content"`
+	Color     string    `json:"color"`
+	Timestamp time.Time `json:"timestamp"`
 }
