@@ -27,6 +27,7 @@ type Runners struct {
 	Endpoints          []Endpoint `bun:"endpoints,type:jsonb,default:jsonb('[]')" json:"endpoints"`
 	RegisteredAt       time.Time  `bun:"registered_at,type:timestamptz,default:now()" json:"registered_at"`
 	ExecutedExecutions []string   `bun:"executed_executions,type:text[],default:'{}'" json:"executed_executions"`
+	ApiURL             string     `bun:"api_url,type:text,default:''" json:"api_url"`
 }
 
 type Endpoint struct {
@@ -45,6 +46,7 @@ type IncomingAutoRunners struct {
 	Plugins       []Plugin   `json:"plugins"`
 	Actions       []Action   `json:"actions"`
 	Endpoints     []Endpoint `json:"endpoints"`
+	ApiURL        string     `json:"api_url"`
 }
 
 type Plugin struct {
