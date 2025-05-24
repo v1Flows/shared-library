@@ -57,6 +57,7 @@ type Params struct {
 	Value       string   `json:"value"`
 	Default     string   `json:"default"`
 	Options     []Option `json:"options,omitempty"`
+	DependsOn   string   `json:"depends_on,omitempty"`
 }
 
 type Option struct {
