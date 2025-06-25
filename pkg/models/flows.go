@@ -45,6 +45,7 @@ type Action struct {
 	UpdateAvailable   bool      `json:"update_available"`
 	UpdateVersion     string    `json:"update_version,omitempty"`
 	UpdatedAction     *Action   `json:"updated_action,omitempty"`
+	Condition         Condition `json:"condition,omitempty"`
 }
 
 type Params struct {
@@ -75,4 +76,16 @@ type FailurePipeline struct {
 	Name         string    `json:"name"`
 	Actions      []Action  `json:"actions"`
 	ExecParallel bool      `json:"exec_parallel"`
+}
+
+type Condition struct {
+	SelectedActionID string          `json:"selected_action_id"`
+	ConditionItems   []ConditionItem `json:"condition_items"`
+}
+
+type ConditionItem struct {
+	ConditionKey   string `json:"condition_key"`
+	ConditionType  string `json:"condition_type"`
+	ConditionValue string `json:"condition_value"`
+	ConditionLogic string `json:"condition_logic"` // e.g., "AND", "OR"
 }
